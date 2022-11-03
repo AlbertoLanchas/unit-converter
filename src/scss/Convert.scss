@@ -1,0 +1,105 @@
+.Convert {
+  position: absolute;
+  width: 41.32%;
+  height: 17.28%;
+  left: 30.61%;
+  top: 8.86%;
+  background: #2e0039;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 21px;
+
+  &-title {
+    position: relative;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    top: 1.5rem;
+    left: 2.375rem;
+  }
+  &-select {
+    cursor: pointer;
+    position: relative;
+    width: 254px;
+    left: 2.37rem;
+    top: 2.37rem;
+    color: white;
+
+    border-bottom: 2px solid white;
+    background-color: #2e0039;
+  }
+
+  &-input {
+    cursor: pointer;
+    position: relative;
+    width: 254px;
+    left: 50%;
+    color: white;
+    text-align: right;
+    border-bottom: 2px solid white;
+    background-color: #2e0039;
+    font-weight: 400;
+  }
+
+  &-favourite {
+    color: white;
+    cursor: pointer;
+    position: relative;
+  }
+  &-arrow {
+    color: white;
+    position: absolute;
+    font-weight: bold;
+    left: 310px;
+    top: 85px;
+  }
+
+  &-unit {
+    color: white;
+    position: absolute;
+    font-weight: 400;
+    left: 625px;
+    top: 90px;
+  }
+
+  &-value {
+    color: white;
+    position: absolute;
+    font-weight: 700;
+    right: 80px;
+    top: 130px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  * {
+    background-color: lightgreen;
+  }
+}
+
+@media screen and (min-width: 1728px) {
+  .Convert {
+    width: 714px;
+    height: 193px;
+    left: 529px;
+    top: 99px;
+
+    &-title {
+      height: 35px;
+      left: 38px;
+      top: 24px;
+    }
+
+    // &-input {
+    //   width: 261px;
+    //   height: 22px;
+    //   bottom: 83px;
+    //   right: 88px;
+    // }
+
+    &-favourite {
+      left: 38px;
+      top: 80px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.Main-saved {
+  position: absolute;
+  top: 29.54%;
+  left: 30.61%;
+  width: 41.32%;
+  height: 23.63%;
+}
+
+.Main-title {
+  color: #676767;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.Main-converted {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+// &--text {
+//   position: absolute;
+//   width: 188px;
+//   height: 26px;
+//   left: 529px;
+//   top: 378px;
+
+//   font-family: "Poppins";
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 16px;
+//   line-height: 24px;
+
+//   color: #676767;
+//   background-color: red;
+// }
