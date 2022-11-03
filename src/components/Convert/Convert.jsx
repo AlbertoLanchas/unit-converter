@@ -2,40 +2,51 @@ import React, { useState, useEffect } from "react";
 import "../../scss/Convert.scss";
 
 const Convert = () => {
-  const [quantity, setQuantity] = useState(1);
-  const [select, setSelect] = useState("km");
-  const [result, setResult] = useState(1);
-  const [resultUnits, setResultUnits] = useState("miles");
+  const [quantity, setQuantity] = useState(0);
+  const [select, setSelect] = useState("");
+  const [result, setResult] = useState(0);
+  const [resultUnits, setResultUnits] = useState("");
+  const [list, setList] = useState([]);
 
   const conversorUnits = (select) => {
     switch (select) {
+      case "":
+        return;
       case "km":
         setResultUnits("miles");
-        setResult(quantity * 2);
-        break;
+        setResult(Math.round(quantity * 0.6213711922 * 100) / 100);
+        return;
       case "miles":
         setResultUnits("km");
-        setResult(quantity * 3);
+        setResult(Math.round(quantity * 1.609344 * 100) / 100);
       case "cm":
         setResultUnits("inches");
-        setResult(quantity * 4);
+        setResult(Math.round(quantity * 0.3937007874 * 100) / 100);
         break;
       case "inches":
         setResultUnits("cm");
-        setResult(quantity * 5);
+        setResult(Math.round(quantity * 2.54 * 100) / 100);
         break;
       case "feet":
         setResultUnits("meters");
-        setResult(quantity * 6);
+        setResult(Math.round(quantity * 0.3048 * 100) / 100);
         break;
       case "meters":
         setResultUnits("feet");
-        setResult(quantity * 7);
+        setResult(Math.round(quantity * 3.280839895 * 100) / 100);
         break;
       default:
         console.log("Invalid Input");
     }
   };
+
+  const addList = () => {
+    setList([...list, { quantity, select, result, resultUnits }]);
+    conversorUnits(select);
+    localStorage.setItem("saved", JSON.stringify(list));
+  };
+
+  console.log("Lista", list);
 
   useEffect(() => {
     conversorUnits(select);
@@ -52,17 +63,21 @@ const Convert = () => {
           setSelect(e.target.value);
         }}
       >
+        <option value="">Select an option</option>
         <option value="km">km to miles</option>
         <option value="miles">miles to km</option>
         <option value="cm">cm to inches</option>
         <option value="inches">inches to cm</option>
-        <option value="feet">feet to cm</option>
+        <option value="feet">feet to meters</option>
         <option value="meters">meters to feet</option>
       </select>
-      <button className="Convert-arrow" onClick={() => setSelect("cm")}>
-        A
+      <button className="Convert-arrow">A</button>
+      <button
+        className="Convert-favourite"
+        onClick={() => addList(quantity, select, result, resultUnits)}
+      >
+        HEART
       </button>
-      <i className="Convert-favourite">HEART</i>
       <input
         className="Convert-input"
         type="text"
