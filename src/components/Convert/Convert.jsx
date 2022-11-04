@@ -19,22 +19,23 @@ const Convert = () => {
       case "miles":
         setResultUnits("km");
         setResult(Math.round(quantity * 1.609344 * 100) / 100);
+        return;
       case "cm":
         setResultUnits("inches");
         setResult(Math.round(quantity * 0.3937007874 * 100) / 100);
-        break;
+        return;
       case "inches":
         setResultUnits("cm");
         setResult(Math.round(quantity * 2.54 * 100) / 100);
-        break;
+        return;
       case "feet":
         setResultUnits("meters");
         setResult(Math.round(quantity * 0.3048 * 100) / 100);
-        break;
+        return;
       case "meters":
         setResultUnits("feet");
         setResult(Math.round(quantity * 3.280839895 * 100) / 100);
-        break;
+        return;
       default:
         console.log("Invalid Input");
     }
@@ -43,15 +44,16 @@ const Convert = () => {
   const addList = () => {
     setList([...list, { quantity, select, result, resultUnits }]);
     conversorUnits(select);
-    localStorage.setItem("saved", JSON.stringify(list));
+    // localStorage.setItem("saved", JSON.stringify(list));
   };
 
   console.log("Lista", list);
 
   useEffect(() => {
+    // setList(JSON.parse(localStorage.getItem("saved")));
     conversorUnits(select);
-    console.log(result);
-  }, [result]);
+    console.log(list);
+  }, [conversorUnits]);
 
   return (
     <div className="Convert">
