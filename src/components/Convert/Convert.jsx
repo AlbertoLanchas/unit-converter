@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { useAppContext } from "../../appContext";
 import "../../scss/Convert.scss";
 
 const Convert = () => {
-  const [quantity, setQuantity] = useState(0);
-  const [select, setSelect] = useState("");
-  const [result, setResult] = useState(0);
-  const [resultUnits, setResultUnits] = useState("");
-  const [list, setList] = useState([]);
+  const {
+    favorites,
+    addToFavorites,
+    removeFromFavorites,
+    quantity,
+    setQuantity,
+    select,
+    setSelect,
+    result,
+    setResult,
+    resultUnits,
+    setResultUnits,
+  } = useAppContext();
 
   const conversorUnits = (select) => {
     switch (select) {
@@ -41,18 +50,16 @@ const Convert = () => {
     }
   };
 
-  const addList = () => {
-    setList([...list, { quantity, select, result, resultUnits }]);
-    conversorUnits(select);
-    // localStorage.setItem("saved", JSON.stringify(list));
-  };
-
-  console.log("Lista", list);
+  // const addList = () => {
+  //   setList([...list, { quantity, select, result, resultUnits }]);
+  //   conversorUnits(select);
+  //   // localStorage.setItem("saved", JSON.stringify(list));
+  // };
 
   useEffect(() => {
     // setList(JSON.parse(localStorage.getItem("saved")));
     conversorUnits(select);
-    console.log(list);
+    console.log(favorites);
   }, [conversorUnits]);
 
   return (
@@ -76,7 +83,7 @@ const Convert = () => {
       <button className="Convert-arrow">A</button>
       <button
         className="Convert-favourite"
-        onClick={() => addList(quantity, select, result, resultUnits)}
+        onClick={() => addToFavorites(quantity, select, result, resultUnits)}
       >
         HEART
       </button>

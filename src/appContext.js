@@ -13,11 +13,16 @@ export const useAppContext = () => {
 
 const AppContextProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
+  const [quantity, setQuantity] = useState(0);
+  const [select, setSelect] = useState("");
+  const [result, setResult] = useState(0);
+  const [resultUnits, setResultUnits] = useState("");
 
-  const addToFavorites = (cat) => {
-    const oldFavorites = [...favorites];
-    const newFavorites = oldFavorites.concat(cat);
-    setFavorites(newFavorites);
+  const addToFavorites = (quantity, select, result, resultUnits) => {
+    setFavorites([
+      ...favorites,
+      { id: new Date(), quantity, select, result, resultUnits },
+    ]);
   };
 
   const removeFromFavorites = (id) => {
@@ -28,7 +33,19 @@ const AppContextProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ favorites, addToFavorites, removeFromFavorites }}
+      value={{
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
+        quantity,
+        setQuantity,
+        select,
+        setSelect,
+        result,
+        setResult,
+        resultUnits,
+        setResultUnits,
+      }}
     >
       {children}
     </AppContext.Provider>

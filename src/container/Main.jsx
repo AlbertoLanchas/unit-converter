@@ -11,11 +11,6 @@ const Main = () => {
         <h2 className="Main-title">saved</h2>
         <div className="Main-converted">
           <Saved></Saved>
-          <Saved></Saved>
-          <Saved></Saved>
-          <Saved></Saved>
-          <Saved></Saved>
-          <Saved></Saved>
         </div>
       </div>
     </div>
