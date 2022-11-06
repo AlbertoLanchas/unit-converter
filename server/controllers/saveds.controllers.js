@@ -2,7 +2,7 @@ import router from "../routes/saveds.routes.js";
 import Saved from "../models/saveds.models.js";
 
 export const getSaveds = (req, res) => {
-  Saved.find().then((allSaveds) => res.send(allSaveds));
+  Saved.find().then((allSaveds) => res.json(allSaveds));
 };
 
 export const getSaved = (req, res) => {

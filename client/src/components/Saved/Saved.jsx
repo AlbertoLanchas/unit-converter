@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../scss/Saved.scss";
 import { useAppContext } from "../../appContext";
 
@@ -6,11 +6,14 @@ const Saved = () => {
   const { favorites, removeFromFavorites } = useAppContext();
 
   const getSavedFetch = () => {
-    fetch("http://localhost:5000/api/saved")
-      .then((res) => res.json)
-      .then((allSaveds) => console.log(allSaveds));
+    fetch("http://localhost:4000/api/saved")
+      .then((res) => res.json())
+      .then((allSaveds) => console.log("este es el saveds", allSaveds));
   };
 
+  useEffect(() => {
+    getSavedFetch();
+  }, []);
   return (
     <>
       {favorites.map(({ id, quantity, select, result, resultUnits }) => {
