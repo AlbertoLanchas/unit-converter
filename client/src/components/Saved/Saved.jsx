@@ -5,14 +5,14 @@ import { useAppContext } from "../../appContext";
 const Saved = () => {
   const { favorites, removeFromFavorites } = useAppContext();
 
-  const getSavedFetch = () => {
-    fetch("http://localhost:4000/api/saved")
-      .then((res) => res.json())
-      .then((allSaveds) => console.log("este es el saveds", allSaveds));
-  };
+  // const getSavedFetch = () => {
+  //   fetch("http://localhost:4000/api/saved")
+  //     .then((res) => res.json())
+  //     .then((allSaveds) => console.log("este es el saveds", allSaveds));
+  // };
 
   useEffect(() => {
-    getSavedFetch();
+    // getSavedFetch();
   }, []);
   return (
     <>
