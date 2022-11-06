@@ -27,7 +27,7 @@ const AppContextProvider = ({ children }) => {
 
   const removeFromFavorites = (id) => {
     const oldFavorites = [...favorites];
-    const newFavorites = oldFavorites.filter((book) => book.id !== id);
+    const newFavorites = oldFavorites.filter((convert) => convert.id !== id);
     setFavorites(newFavorites);
   };
 

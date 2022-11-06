@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="Header">
       <i className="Header-icon">O</i>
-      <p className="Header-text">unit converter</p>
+      <h1 className="Header-text">unit converter</h1>
     </div>
   );
 };

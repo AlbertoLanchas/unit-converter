@@ -4,7 +4,7 @@ import { useAppContext } from "../../appContext";
 
 const Saved = () => {
   const { favorites, removeFromFavorites } = useAppContext();
-  console.log("En saved", favorites);
+
   return (
     <>
       {favorites.map(({ id, quantity, select, result, resultUnits }) => {

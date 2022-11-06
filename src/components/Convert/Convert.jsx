@@ -6,7 +6,6 @@ const Convert = () => {
   const {
     favorites,
     addToFavorites,
-    removeFromFavorites,
     quantity,
     setQuantity,
     select,
