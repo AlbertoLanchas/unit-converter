@@ -5,6 +5,12 @@ import { useAppContext } from "../../appContext";
 const Saved = () => {
   const { favorites, removeFromFavorites } = useAppContext();
 
+  const getSavedFetch = () => {
+    fetch("http://localhost:5000/api/saved")
+      .then((res) => res.json)
+      .then((allSaveds) => console.log(allSaveds));
+  };
+
   return (
     <>
       {favorites.map(({ id, quantity, select, result, resultUnits }) => {

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Task 1",
+    "quantity": 100,
+    "select": "km",
+    "result": 62.12,
+    "resultUnits": "miles"
+  },
+  {
+    "title": "Task 2",
+    "quantity": 100,
+    "select": "cm",
+    "result": 39.37,
+    "resultUnits": "inch"
+  },
+  {
+    "title": "Task 3",
+    "quantity": 100,
+    "select": "meters",
+    "result": 328.08,
+    "resultUnits": "feet"
+  }
+]
