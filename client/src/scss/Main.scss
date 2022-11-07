@@ -1,5 +1,5 @@
 .Main {
-  height: 100%;
+  margin-bottom: 2rem;
 }
 
 .Main-saved {
@@ -18,21 +18,22 @@
 .Main-converted {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
 }
 
-// &--text {
-//   position: absolute;
-//   width: 188px;
-//   height: 26px;
-//   left: 529px;
-//   top: 378px;
+@media screen and (max-width: 700px) {
+  .Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: center;
+  }
+  .Main-saved {
+    width: 90%;
+    margin: 0;
+  }
 
-//   font-family: "Poppins";
-//   font-style: normal;
-//   font-weight: 700;
-//   font-size: 16px;
-//   line-height: 24px;
-
-//   color: #676767;
-//   background-color: red;
-// }
+  .Main-converted {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
