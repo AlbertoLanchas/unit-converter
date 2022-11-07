@@ -1,9 +1,10 @@
+.Main {
+  height: 100%;
+}
+
 .Main-saved {
-  position: absolute;
-  top: 29.54%;
-  left: 30.61%;
   width: 41.32%;
-  height: 23.63%;
+  margin-left: 30%;
 }
 
 .Main-title {
@@ -11,6 +12,7 @@
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .Main-converted {
