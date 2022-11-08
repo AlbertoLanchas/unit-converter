@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../../scss/Saved.scss";
 import { useAppContext } from "../../appContext";
 
 const Saved = () => {
   const { favorites, removeFromFavorites, list } = useAppContext();
+  const [arraySaved, setArraySaved] = useState([]);
 
   // const getSavedFetch = () => {
   //   fetch("http://localhost:4000/api/saved")
   //     .then((res) => res.json())
-  //     .then((allSaveds) => console.log("este es el saveds", allSaveds));
+  //     .then((allSaveds) => setArraySaved(allSaveds));
   // };
+  // getSavedFetch();
 
   useEffect(() => {
     // getSavedFetch();
