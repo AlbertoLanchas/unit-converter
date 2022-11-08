@@ -51,17 +51,16 @@ const Convert = () => {
     }
   };
 
-  // const addList = () => {
-  //   setList([...list, { quantity, select, result, resultUnits }]);
-  //   conversorUnits(select);
-  //   // localStorage.setItem("saved", JSON.stringify(list));
-  // };
+  const resetUnits = () => {
+    addToFavorites(quantity, select, result, resultUnits);
+    console.log("esto es favorites", favorites);
+    setQuantity(0);
+  };
 
   useEffect(() => {
-    // setList(JSON.parse(localStorage.getItem("saved")));
     conversorUnits(select);
-    console.log(favorites);
-  }, [conversorUnits]);
+    localStorage.setItem("conversor", JSON.stringify(favorites));
+  }, [conversorUnits, favorites]);
 
   return (
     <div className="Convert">
@@ -97,13 +96,13 @@ const Convert = () => {
           }}
           value={quantity}
         />
-        <i className="Convert-result--unit">{select}</i>
+        <p className="Convert-result--unit">{select}</p>
       </div>
 
       <div className="Convert-footer">
         <button
           className="Convert-footer--favourite"
-          onClick={() => addToFavorites(quantity, select, result, resultUnits)}
+          onClick={() => resetUnits()}
         >
           <AiOutlineHeart />
         </button>

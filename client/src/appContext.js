@@ -17,6 +17,7 @@ const AppContextProvider = ({ children }) => {
   const [select, setSelect] = useState("");
   const [result, setResult] = useState(0);
   const [resultUnits, setResultUnits] = useState("");
+  let list = {};
 
   const addToFavorites = (quantity, select, result, resultUnits) => {
     setFavorites([
@@ -30,6 +31,8 @@ const AppContextProvider = ({ children }) => {
     const newFavorites = oldFavorites.filter((convert) => convert.id !== id);
     setFavorites(newFavorites);
   };
+
+  list = JSON.parse(localStorage.getItem("conversor"));
 
   return (
     <AppContext.Provider
@@ -45,6 +48,7 @@ const AppContextProvider = ({ children }) => {
         setResult,
         resultUnits,
         setResultUnits,
+        list,
       }}
     >
       {children}
