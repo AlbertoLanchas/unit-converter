@@ -13,7 +13,6 @@ const Saved = () => {
 
   useEffect(() => {
     // getSavedFetch();
-    console.log("esto es list", list);
   }, [list]);
   return (
     <>

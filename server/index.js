@@ -15,5 +15,3 @@ app.use(express.json());
 app.use(indexRoutes);
 app.use(savedRoutes);
 app.listen(PORT);
-
-console.log(`server is runing on port ${PORT}`);

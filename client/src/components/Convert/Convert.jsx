@@ -47,13 +47,12 @@ const Convert = () => {
         setResult(Math.round(quantity * 3.280839895 * 100) / 100);
         return;
       default:
-        console.log("Invalid Input");
+        return;
     }
   };
 
   const resetUnits = () => {
     addToFavorites(quantity, select, result, resultUnits);
-    console.log("esto es favorites", favorites);
     setQuantity(0);
   };
 
